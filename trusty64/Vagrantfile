@@ -25,6 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "file", source: "~/Dropbox/vagrant/htoprc", destination: ".htoprc"
   config.vm.provision "file", source: "~/Dropbox/vagrant/tmux.conf", destination: ".tmux.conf"
 	config.vm.provision :shell, :inline => "curl -sSL https://get.docker.com/ubuntu/ | sudo sh"
+	config.vm.provision :shell, :inline => "apt-get autoremove -y --force-yes"
   
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
